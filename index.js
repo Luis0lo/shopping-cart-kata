@@ -45,7 +45,9 @@ export function checkout(shoppingList) {
 
 export function findProduct(code, index) {
   if (code === '') throw new Error(`Invalid product code at index ${index}`);  
-  return pricingList.find((product) => product.productCode === code);
+  const productDetails =  pricingList.find((product) => product.productCode === code);
+  if (!productDetails) throw new Error(`Product code at index ${index} not found in the DB`);  
+  return productDetails
 }
 
 export function calculateProductTotal({ unitPrice, specialPrice }, quantity, index) {
