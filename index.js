@@ -1,6 +1,6 @@
 import { pricingList } from "./pricingListDB.js";
 
-const shoppingListData = [
+ export const shoppingListData = [
   {
     code: 'A',
     quantity: 3,
@@ -20,6 +20,9 @@ const shoppingListData = [
 ];
 
 export function checkout(shoppingList) {
+
+  if (!shoppingList.length) return;  
+
   let shoppingListDetails = [];
   for (const [index, { code, quantity }] of shoppingList.entries()) {
     try {
@@ -47,6 +50,8 @@ export function findProduct(code, index) {
 
 export function calculateProductTotal({ unitPrice, specialPrice }, quantity, index) {
   if (quantity < 1) throw new Error(`You need a valid quantity at index ${index}`);  
+  if (unitPrice < 1) throw new Error(`You need a valid price at index ${index}`);  
+
   if (specialPrice.minQuantity) {
     const fullPriceProductUnits = quantity % specialPrice.minQuantity;
     const productBundleQuantity =
