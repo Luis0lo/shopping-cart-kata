@@ -1,8 +1,46 @@
+# Shopping Cart Kata
+
 # Porpuse
 
 Implement a checkout system that consuming X input should return the subtotal having into consideration special prices.
 
+| Item Code | Unit Price | Special Price |
+| :-------- | :--------- | :------------ |
+| A         | 50         | 3 for 140     |
+| B         | 35         | 2 for 60      |
+| C         | 25         |               |
+| D         | 12         |               |
+
+input:
+
+```
+[
+  {
+    code: "A",
+    quantity: 3
+  },
+  {
+    code: "B",
+    quantity: 3
+  },
+  {
+    code: "C",
+    quantity: 1
+  },
+  {
+    code: "D",
+    quantity: 2
+  }
+]
+```
+expected result: 280
+
 # Functions
+
+[checkout()](#checkout-function) -
+[findProduct()](#find-product-function) -
+[calculateProductTotal()](#calculate-product-total-function) -
+[calculateShoppingListSubtotal()](#calculate-shopping-list-subtotal-function)
 
 ## Checkout Function
 
@@ -40,6 +78,7 @@ findProduct(code, index)
 ### Description
 
 - Looks for the product details in pricing list database.
+
 ```
 [
     {
