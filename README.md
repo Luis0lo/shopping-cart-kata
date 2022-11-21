@@ -33,7 +33,7 @@ input:
   }
 ]
 ```
-expected result: 280
+expected result: 284
 
 # Functions
 
