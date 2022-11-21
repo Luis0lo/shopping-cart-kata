@@ -2,7 +2,7 @@ import {
   checkout,
   findProduct,
   calculateProductTotal,
-  calculateShoppingListSubTotal,
+  calculateShoppingListSubtotal,
   shoppingListData,
 } from './index';
 
@@ -113,7 +113,7 @@ describe('Calculate sub total fn', () => {
       { productTotal: 24 },
     ];
     const expected = 284;
-    const actual = calculateShoppingListSubTotal(details);
+    const actual = calculateShoppingListSubtotal(details);
 
     expect(actual).toBe(expected);
   });
