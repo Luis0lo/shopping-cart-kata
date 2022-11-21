@@ -7,21 +7,37 @@ import {
 } from './index';
 
 describe('Checkout fn', () => {
-  it('should return the correct subtotal.', () => {
-    const shoppingList = [
-      {
-        code: 'A',
-        quantity: 3,
-      },
-      {
-        code: 'B',
-        quantity: 3,
-      },
-    ];
-    const expected = 235;
-    const actual = checkout(shoppingList);
-    expect(actual).toBe(expected);
+  it.each([
+    {
+      shoppingList: [
+        {
+          code: 'A',
+          quantity: 3,
+        },
+        {
+          code: 'B',
+          quantity: 3,
+        },
+      ],
+      expected: 235,
+    },
+    {
+      shoppingList: [
+        {
+          code: 'A',
+          quantity: 1,
+        },
+        {
+          code: 'B',
+          quantity: 2,
+        },
+      ],
+      expected: 110,
+    },
+  ])(`%j should return expected value`, ({ shoppingList, expected }) => {
+    expect(checkout(shoppingList)).toBe(expected);
   });
+
   it('should return undefined if shopping list is empty', () => {
     const shoppingList = [];
 
