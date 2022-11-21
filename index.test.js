@@ -7,7 +7,7 @@ import {
 } from './index';
 
 describe('Checkout fn', () => {
-  it('should return the correct sub total.', () => {
+  it('should return the correct subtotal.', () => {
     const shoppingList = [
       {
         code: 'A',
@@ -104,8 +104,8 @@ describe('Calculate Product Total fn', () => {
   });
 });
 
-describe('Calculate sub total fn', () => {
-  it('should return correct sub total', () => {
+describe('Calculate subtotal fn', () => {
+  it('should return correct subtotal', () => {
     const details = [
       { productTotal: 140 },
       { productTotal: 95 },
