@@ -37,10 +37,10 @@ export function checkout(shoppingList) {
       return
     }
   }
-  const subTotal = calculateShoppingListSubTotal(shoppingListDetails);
+  const subtotal = calculateShoppingListSubtotal(shoppingListDetails);
   console.log('Details: ', shoppingListDetails);
-  console.log('sub total: ', subTotal);
-  return subTotal;
+  console.log('sub total: ', subtotal);
+  return subtotal;
 }
 
 export function findProduct(code, index) {
@@ -68,11 +68,11 @@ export function calculateProductTotal({ unitPrice, specialPrice }, quantity, ind
   }
 }
 
-export function calculateShoppingListSubTotal(shoppingListDetails) {
-  const subTotal = shoppingListDetails.reduce((acc, { productTotal }) => {
+export function calculateShoppingListSubtotal(shoppingListDetails) {
+  const subtotal = shoppingListDetails.reduce((acc, { productTotal }) => {
     return acc + productTotal;
   }, 0);
-  return subTotal;
+  return subtotal;
 }
 
 checkout(shoppingListData);
