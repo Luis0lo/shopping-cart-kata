@@ -146,3 +146,9 @@ calculateShoppingListSubtotal(shoppingListDetails)
 - Run test using command - `npm run test`
 - [index.test.js](./index.test.js)
 - [Jest docs](https://jestjs.io/docs/getting-started)
+
+## Feedback
+
+- We would have liked the application to consume actual data sources (e.g. json files) like the one provided, rather than being hardcoded with the data-set.
+- The ability to create sub-totals would be good to provide, as they would probably be required if we wanted a production checkout system (i.e. Scan half the data, provide a subtotal and then add more to the basket before working out the total).
+- The provided solution didn't account for 2 different entries for the same product type, i.e. {code: A, quantity: 2}, {code: A, quantity: 1} results in 150, not 140 as it should.
